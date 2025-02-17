@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Instant Deposit</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Load the same app.js to handle deposit logic, no inline script here -->
+    <script type="module" src="app.js" defer></script>
+  </head>
+
+  <body>
+    <div class="phone-outline">
+      <div class="phone-frame">
+        <div class="spinner-overlay" id="spinner-overlay" style="display: none">
+          <div class="spinner"></div>
+          <p>Processing your deposit...</p>
+        </div>
+        <div class="app-container deposit-page">
+          <h2>Instant Deposit</h2>
+          <div class="deposit-balance">
+            <span class="balance-amount" id="user-balance">£0.00</span>
+            <p class="balance-limit">Max £500/month</p>
+          </div>
+
+          <!-- Quick deposit buttons -->
+          <div class="quick-buttons">
+            <button data-deposit="20">+£20</button>
+            <button data-deposit="50">+£50</button>
+            <button data-deposit="100">+£100</button>
+          </div>
+
+          <!-- Typed amount input -->
+          <div class="typed-amount-container">
+            <input type="text" id="typed-amount" placeholder="0" readonly />
+          </div>
+
+          <!-- Numeric keypad -->
+          <div class="numeric-keypad">
+            <button data-key="1">1</button>
+            <button data-key="2">2</button>
+            <button data-key="3">3</button>
+            <button data-key="4">4</button>
+            <button data-key="5">5</button>
+            <button data-key="6">6</button>
+            <button data-key="7">7</button>
+            <button data-key="8">8</button>
+            <button data-key="9">9</button>
+            <button data-key="0">0</button>
+            <button data-key="del">⌫</button>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="action-buttons">
+            <button id="deposit-button">Deposit</button>
+            <button id="return-button">Return</button>
+          </div>
+        </div>
+
+        <!-- Bottom nav -->
+        <div class="bottom-nav">
+          <div class="nav-item">
+            <a href="index.html" style="text-decoration: none; color: inherit">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+          </div>
+          <div class="nav-item">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Games</span>
+          </div>
+          <div class="nav-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

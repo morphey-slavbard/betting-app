@@ -1,0 +1,825 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5; /* Light gray background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling outside the phone frame */
+}
+#main-app {
+    display: flex;
+    flex-direction: column;
+    
+    
+   
+}
+
+/* Outer Frame for Thin Black Border */
+.phone-outer-frame {
+    width: 430px;
+    height: 820px;
+    background-color: #000; /* Black border for the frame */
+    border-radius: 24px; /* Rounded corners for phone look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    /*overflow: hidden;*/
+}
+
+/* Phone Frame */
+.phone-frame {
+    width: 400px;
+    height: 800px;
+    background-color: #000; /* Black phone frame */
+    border-radius: 40px; /* Rounded corners for phone look */
+    position: relative;
+    z-index:1;
+    display: flex;
+    flex-direction: column;
+    /*overflow: hidden; /* Prevent content overflow */
+}
+
+/* Top Notch */
+.phone-frame::before {
+    content: "";
+    width: 150px;
+    height: 20px;
+    background-color: #000; /* Matches phone frame color */
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+
+/* Phone Outline (Inner Border) */
+.phone-outline {
+    width: 420px; /* Inner outline for phone */
+    height: 820px;
+    background-color: black; /* White center border */
+    border-radius: 28px; /* Keep rounded corners for realism */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Scrollable App Container */
+.app-container {
+    flex: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f1f0f0; /* White background for the content */
+    border-radius: 40px 40px 0 0; /* Rounded top corners */
+    margin-top: 10px; /* Consistent inner padding */
+    padding-bottom: 80px; /* Extra space for footer*/   
+}
+
+/* Carousel Section */
+.carousel-container {
+    padding: 20px;
+    background-color: #2b2a2a; /* Dark background for the carousel */
+    margin-bottom: 20px;
+    padding-right:0px;
+}
+
+.carousel-header {
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-top:10px;
+}
+
+.carousel-header h1 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.carousel-header p {
+    font-size: 14px;
+    color: #cccccc;
+    margin: 5px 0 10px 0;
+}
+
+.carousel {
+    display: flex;
+    gap: 15px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for a clean look */
+}
+
+.carousel-item {
+    flex: 0 0 60%; /* Each card takes 75% of the carousel width */
+    scroll-snap-align: start;
+    background-color: #FFD100;
+    color: #101820;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+    -webkit-text-stroke: 1px rgb(49, 47, 47);
+    
+}
+
+.card-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.carousel-item h2 {
+    font-size: 18px;
+    margin: 50px 0 10px 0;
+    
+}
+
+.carousel-item p {
+    font-size: 14px;
+    color: #101820;
+}
+
+/* Help Section */
+.help-section {
+    padding: 20px;
+    background-color: #f1f0f0; /* White background for blocks */
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+.help-section h2 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.help-section button {
+    margin: 10px 0;
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: none; /* Remove default border */
+}
+
+.help-section button:hover {
+    background-color: rgb(0, 74, 214);
+}
+
+.yellow-button {
+    background-color: rgb(0, 74, 214); /* Yellow color */
+    color: #101820; /* Dark text */
+}
+
+.yellow-button:hover {
+    background-color: rgb(0, 74, 214); /* Slightly darker yellow on hover */
+}
+
+/* White Button Styling */
+.white-button {
+    background-color: #ffffff; /* White color */
+    color: #101820; /* Dark text */
+    border: 1px solid rgb(0, 74, 214); /* Add yellow border for contrast */
+}
+
+.white-button:hover {
+    background-color: #f2f2f2; /* Light gray on hover */
+}
+
+.addon-yellow-button {
+    background-color: rgb(0, 74, 214); /* Yellow background */
+    color: #101820; /* Dark text */
+    border: none; /* No border */
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%; /* Full width inside container */
+    margin: 10px auto; /* Center button horizontally */
+    display: block; /* Ensure block-level alignment */
+}
+
+/* Offer Section */
+.offer-section {
+    padding: 20px;
+    background-color: #f1f0f0;; /* White background for blocks */
+    text-align: center;
+    margin: 10px 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+.offer-section h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.offer-section p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Offers Near You Section */
+.offers-section {
+    padding: 20px;
+    background-color: #f1f0f0;; /* White background for blocks */
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);*/
+}
+
+.offers-section .offer {
+    background-color: #f2f2f2; /* Light gray for contrast */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Footer Navigation */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2c2c2c; /* Dark footer background */
+    padding: 10px 0;
+    border-top: 1px solid #444444;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav a i {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Floating Offer Section */
+.floating-offer-section {
+    position: relative; /* Needed to handle z-index if necessary */
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 16px; /* Rounded corners */
+    padding: 20px; /* Inner spacing */
+    width: 90%; /* Adjust width to fit nicely in the layout */
+    margin: 20px auto; /* Center block and add spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for elevation */
+    z-index: 10; /* Ensure it floats above other elements */
+}
+
+/* Headline Styling */
+.floating-offer-section h2 {
+    font-size: 18px;
+    color: #333333; /* Dark text for contrast */
+    margin-bottom: 10px; /* Spacing below headline */
+}
+
+/* Text Styling */
+.floating-offer-section p {
+    font-size: 14px;
+    color: #666666; /* Slightly muted text color */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+/* Button Styling */
+.yellow-button {
+    background-color: rgb(0, 74, 214); /* Yellow button background */
+    color: white; /* Dark text for contrast */
+    border: none; /* No border */
+    padding: 10px;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%; /* Full button width inside the block */
+}
+
+.yellow-button:hover {
+    background-color: rgb(0, 74, 214); /* Slightly darker yellow on hover */
+}
+
+
+/* Offers Section */
+.offers-section {
+    padding: 20px;
+    padding-bottom: 40px; 
+    background-color: #ffffff; /* White background */
+    text-align: center;
+    border-radius: 16px;
+    margin: 20px 10px; /* Add spacing around the section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.offers-section h2 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 15px; /* Space between grid items */
+    margin-bottom: 20px;
+}
+
+/* Offer Card Styling */
+.offer-card {
+    background-color: #f9f9f9; /* Light gray background for cards */
+    border-radius: 12px; /* Rounded corners */
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center content inside */
+    cursor: pointer; /* Indicate interactivity */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth animation */
+}
+
+/* Active (Tap) State */
+.offer-card:active {
+    transform: scale(0.95); /* Slightly shrink the card */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); /* Softer shadow on tap */
+    background-color: #f2f2f2; /* Slightly darker gray on tap */
+}
+
+/* Offer Image Styling */
+.offer-image {
+    width: 100%; /* Image size */
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for images */
+    object-fit: cover; /* Ensure images don't stretch */
+    margin-bottom: 10px; /* Spacing below image */
+}
+
+/* Brand Name Styling */
+.offer-brand {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0;
+}
+
+/* Subtitle Styling */
+.offer-subtitle {
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+}
+
+/* Cookie Buttons Section */
+/* Cookie Buttons Section */
+.cookie-buttons {
+    position:absolute; /* Position relative to the viewport */
+    top: 10px; /* Position above the phone */
+    left: 30%; /* Center horizontally */
+    transform: translateX(-50%); /* Center align */
+    z-index: 100; /* Ensure it stays above other elements */
+    text-align: center; /* Center the buttons inside */
+    margin: 0; /* Remove any default margin */
+}
+
+/* Cookie Buttons Styling */
+.cookie-buttons button {
+    background-color: rgb(0, 74, 214); /* Yellow button background */
+    color: #101820; /* Dark text */
+    border: none;
+    padding: 10px 20px; /* Button size */
+    margin: 10px; /* Space between buttons */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Button Active (Tap) State */
+.cookie-buttons button:active {
+    transform: scale(0.95); /* Shrink on tap */
+    background-color: rgb(0, 74, 214); /* Darker yellow on tap */
+}
+
+.banner {
+    position: relative; /* Needed to handle z-index if necessary */
+    background-color: rgba(0, 0, 0, 0.2); /* White background for contrast */
+    /*border-radius: 16px; /* Rounded corners */
+    /*padding: 20px; /* Inner spacing */
+    width: 100%; /* Adjust width to fit nicely in the layout */
+    margin: 20px auto; /* Center block and add spacing */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for elevation */
+    z-index: 10; /* Ensure it floats above other elements */
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /*margin-bottom: 15px;*/
+}
+
+.banner h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.banner-button {
+    display: block; /* Ensures the button is treated as a block element */
+    background-color: rgb(0, 74, 214); /* Yellow button background */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px;
+    width: 90%; /* Make the button 90% of the banner's width */
+    margin: 0 auto; /* Center the button horizontally */
+    border-radius: 8px; /* Rounded corners */
+    cursor: none; /* Pointer cursor on hover */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; /* Center the text inside the button */
+    text-decoration: none;
+}
+
+/* Login Page Styling */
+.login-container {
+    width: 100%;
+    height: 100%; /* Fill the phone frame */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Match app background */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in height/width */
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-button {
+    background-color: rgb(0, 74, 214);
+    color: #101820;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.login-button:hover {
+    background-color: rgb(0, 74, 214);
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.help-section {
+    text-align: center;
+  }
+  
+  .menu-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #d31240;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .menu-item img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu-item span {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+  }
+  
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    
+  }
+  
+  .nav-item img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .nav-item span {
+    font-size: 12px;
+    color: #333;
+    margin-top: 4px;
+  }
+  
+  #deposit-page {
+    position: absolute !important; /* Ensure it's above everything */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999; /* Higher than phone-frame */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ======================================
+   Deposit Page Styles
+   Place in styles.css
+   ====================================== */
+
+/* Makes the deposit page fill the phone frame
+   with scrollable content if it's too tall. */
+   .deposit-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  
+    background-color: #ffffff; /* White background */
+    height: 100%; /* Fill the phone-frame's height */
+    box-sizing: border-box;
+    color: #333;
+  
+    /* Allow vertical scrolling; reserve space for bottom nav */
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: 120px; /* Enough bottom space so nav doesn't overlap */
+  }
+  
+  /* Title text (e.g. "Instant Deposit") */
+  .deposit-page h2 {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+  
+  /* Balance display (e.g. "£0.00") */
+  .deposit-balance {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .deposit-balance .balance-amount {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .deposit-balance .balance-limit {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Quick deposit buttons (e.g. +£20, +£50, +£100) */
+  .quick-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .quick-buttons button {
+    background-color: #f0f0f0;
+    color: #333333;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 25px; /* Larger padding for bigger buttons */
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .quick-buttons button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* Container for the typed amount input */
+  .typed-amount-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .typed-amount-container input {
+    display: block;
+    font-size: 32px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  /* Numeric keypad layout (3 columns) */
+  .numeric-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  .numeric-keypad button {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 12px;
+    font-size: 28px; /* Larger font for bigger buttons */
+    color: #333333;
+    width: 70px; /* Make them more square */
+    height: 70px; /* Make them more square */
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .numeric-keypad button:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* Container for the Deposit + Return buttons */
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  /* Deposit button: #d31240 with white text */
+  #deposit-button {
+    background-color: #d31240;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 80%; /* Same width percentage as the input */
+    max-width: 300px; /* Same max width as the input */
+    margin: 0 auto; /* Centre the button horizontally */
+  }
+  #deposit-button:hover {
+    background-color: #bb0f38;
+  }
+  
+  /* Return button style (if you add one) */
+  #return-button {
+    background-color: #f0f0f0;
+    color: #333333;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  #return-button:hover {
+    background-color: #e6e6e6;
+  }
+
+  /* Spinner Overlay */
+.spinner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* ensure it's on top of everything */
+  }
+  
+  .spinner-overlay p {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* The spinner itself */
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #f3f3f3; /* Light grey border */
+    border-top: 6px solid #d31240; /* Pinkish red top border */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Spin animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+
+

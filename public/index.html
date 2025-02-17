@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AA App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- We load app.js here (no inline scripts) -->
+    <script type="module" src="app.js" defer></script>
+    <link rel="preconnect" href="//cdn.dynamicyield.com" />
+    <link rel="preconnect" href="//st.dynamicyield.com" />
+    <link rel="preconnect" href="//rcom.dynamicyield.com" />
+    <link rel="dns-prefetch" href="//cdn.dynamicyield.com" />
+    <link rel="dns-prefetch" href="//st.dynamicyield.com" />
+    <link rel="dns-prefetch" href="//rcom.dynamicyield.com" />
+    <script
+      type="text/javascript"
+      src="//cdn.dynamicyield.com/api/8791759/api_dynamic.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.dynamicyield.com/api/8791759/api_static.js"
+    ></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Phone Outer Frame -->
+    <div class="phone-outline">
+      <div class="phone-frame">
+        <!-- Login Page -->
+        <div id="login-page" class="app-container">
+          <div class="login-container">
+            <h1>Login</h1>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                placeholder="Enter your username"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+              />
+            </div>
+            <button id="login-button" class="login-button">Login</button>
+            <p id="error-message" class="error-message" style="display: none">
+              Invalid credentials
+            </p>
+          </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="main-app" class="app-container" style="display: none">
+          <div class="carousel-container">
+            <div class="carousel-header">
+              <h1>Good morning, Darren</h1>
+              <p>Your Personalised Games</p>
+            </div>
+            <div class="carousel" id="carousel">
+              <div
+                class="carousel-item"
+                style="
+                  background-image: url('https://www.norsk-tipping.no/ow/assets/lottery/lotto/lotto_entrance_bg.png');
+                  background-size: cover;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                "
+              >
+                <img
+                  src="https://www.norsk-tipping.no/staticimages/ntds/logos/lotto/lotto-negative.svg?v1"
+                  alt="Breakdown Cover"
+                  class="card-image"
+                />
+                <h2>New Lotto millionaires every Saturday</h2>
+                <p>First prize pool approx. 14 million</p>
+              </div>
+              <div class="carousel-item" style="background-color: #e2ecfc">
+                <img
+                  src="https://www.norsk-tipping.no/staticimages/ntds/logos/oddsen/oddsen-full-color.svg?v1"
+                  alt="Your Shortcut to the odds"
+                  class="card-image"
+                />
+                <h2>Your shortcut to the odds</h2>
+                <p>Make that first bet</p>
+              </div>
+              <div class="carousel-item" style="background-color: #147300">
+                <img
+                  src="https://www.norsk-tipping.no/staticimages/ntds/logos/flax/flax-negative.svg?v1"
+                  alt="Car Insurance"
+                  class="card-image"
+                />
+                <h2>Spinkling that money</h2>
+                <p>Loads of games to choose from</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Example help-section with deposit link to deposit.html -->
+          <div class="help-section">
+            <div class="menu-options">
+              <!-- Just a link to deposit.html -->
+              <a
+                href="deposit.html"
+                style="text-decoration: none; color: inherit"
+              >
+                <div class="menu-item">
+                  <i class="fa-solid fa-arrow-circle-down"></i>
+                  <span>Deposit</span>
+                </div>
+              </a>
+              <div class="menu-item" onclick="handleHelp('withdraw')">
+                <i class="fa-solid fa-arrow-circle-up"></i>
+                <span>Withdraw</span>
+              </div>
+              <div class="menu-item" onclick="handleHelp('transactions')">
+                <i class="fa-solid fa-list"></i>
+                <span>History</span>
+              </div>
+              <div class="menu-item" onclick="handleHelp('support')">
+                <i class="fa-solid fa-life-ring"></i>
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="deposit-banner"
+            style="
+              display: none;
+              background-color: #d4edda; /* Light green background */
+              color: #155724; /* Dark green text */
+              padding: 10px;
+              margin: 10px;
+              border-radius: 5px;
+              text-align: center;
+              font-weight: bold;
+            "
+          >
+            <!-- This text will be set by app.js -->
+          </div>
+
+          <div class="banner">
+            <img
+              id="banner-image"
+              class="main-block"
+              src="https://cdn.dynamicyield.com/api/8791759/images/b1e342faca1b__screenshot_2025-02-14_at_13_02_08.png"
+              alt="Brand Logo"
+              class="offer-image"
+            />
+          </div>
+          <div class="offers-section">
+            <h2>Games We Recommend</h2>
+            <div class="offers-grid">
+              <div class="offer-card">
+                <img
+                  src="https://cdn.dynamicyield.com/api/8791349/images/30e6eaa838d86__screenshot_2025-02-14_at_13_58_43.png"
+                  alt="Brand Logo"
+                  class="offer-image"
+                />
+              </div>
+              <div class="offer-card">
+                <img
+                  src="https://cdn.dynamicyield.com/api/8791349/images/33b4a42515220__screenshot_2025-02-14_at_13_54_23.png"
+                  alt="Brand Logo"
+                  class="offer-image"
+                />
+              </div>
+              <div class="offer-card">
+                <img
+                  src="https://cdn.dynamicyield.com/api/8791349/images/25ab035142e8f__screenshot_2025-02-14_at_13_56_53.png"
+                  alt="Brand Logo"
+                  class="offer-image"
+                />
+              </div>
+              <div class="offer-card">
+                <img
+                  src="https://cdn.dynamicyield.com/api/8791349/images/33d897dc48c54__screenshot_2025-02-14_at_13_56_45.png"
+                  alt="Brand Logo"
+                  class="offer-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom nav -->
+        <div class="bottom-nav">
+          <div class="nav-item" onclick="navigateTo('home')">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </div>
+          <div class="nav-item" onclick="navigateTo('search')">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+          </div>
+          <div class="nav-item" onclick="navigateTo('games')">
+            <i class="fa-solid fa-gamepad"></i>
+            <span>Games</span>
+          </div>
+          <div class="nav-item" onclick="navigateTo('profile')">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
