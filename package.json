@@ -1,0 +1,18 @@
+{
+  "name": "theaa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@api/dy-dev": "file:.api/apis/dy-dev",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  },
+  "keywords": [],
+  "description": ""
+}
